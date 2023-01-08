@@ -5,12 +5,14 @@ app = Flask(__name__)
 # Generate random number from 0-9
 random_num = randint(0,9)
 
+# Create homepage
 @app.route('/')
 def home():
     return "<h1>Guess a number between 0-9!</h1>" \
            "<p>To guess 5, modify the url:</p>" \
            "<p>http://123.4.5.6:7890/<b>5</b></p>"
 
+# Create different paths
 @app.route('/<value>')
 def guess(value):
     if int(value) == random_num:
