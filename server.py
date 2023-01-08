@@ -12,7 +12,7 @@ def home():
            "<p>To guess 5, modify the url:</p>" \
            "<p>http://123.4.5.6:7890/<b>5</b></p>"
 
-# Create different paths
+# Provide high/low/correct response to different paths
 @app.route('/<value>')
 def guess(value):
     if int(value) == random_num:
@@ -22,5 +22,6 @@ def guess(value):
     elif int(value) < random_num:
         return "<img src='https://media.tenor.com/HV9KIjODgK0AAAAS/tenor.gif', width='500'>"
 
+# Run server
 if __name__ =="__main__":
     app.run(debug=True)
